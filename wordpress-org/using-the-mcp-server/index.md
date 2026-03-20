@@ -1,6 +1,6 @@
-# Using the MCP Server
+# Using the WordPress.org MCP Server
 
-The WordPress.org Plugin Directory provides an MCP (Model Context Protocol) server that lets AI-powered development tools help you prepare, validate, and submit plugins. If you use tools like Claude, Cursor, or VS Code with AI capabilities, you can connect them to WordPress.org so they have direct access to plugin guidelines, readme validation, submission status, and more.
+WordPress.org provides an MCP (Model Context Protocol) server that lets AI-powered development tools help you prepare, validate, and submit plugins to the Plugin Directory. If you use tools like Claude, Cursor, or VS Code with AI capabilities, you can connect them to WordPress.org so they have direct access to plugin guidelines, readme validation, submission status, and more.
 
 This is a tool to assist your workflow, not a replacement for the review process. All plugins submitted through the MCP server go through the same review as plugins submitted through the web form. All [Plugin Guidelines](https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/) apply in full.
 
@@ -10,7 +10,7 @@ This is a tool to assist your workflow, not a replacement for the review process
 
 ## Prerequisites
 
-- A [WordPress.org account](https://login.wordpress.org/register).
+- A [WordPress.org account](https://login.wordpress.org).
 - An MCP-compatible client (such as [Claude Desktop](https://claude.ai/download), [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Cursor](https://www.cursor.com/), or [VS Code](https://code.visualstudio.com/)).
 - [Node.js](https://nodejs.org/) (version 18 or later).
 
@@ -26,7 +26,7 @@ npx -y @wporg/mcp
 
 This opens your browser to authorize the connection and create an application password, then automatically detects and configures your installed MCP clients (currently Claude Desktop, Claude Code, Cursor, and VS Code).
 
-If your client isn't supported yet, [let us know](https://meta.trac.wordpress.org/newticket) and use the manual setup below.
+If your client isn't supported yet, please [let us know](https://meta.trac.wordpress.org/newticket) and use the manual setup below.
 
 ### Manual setup
 
@@ -51,7 +51,7 @@ After approving, you'll see a JSON configuration block that looks like this:
   "mcpServers": {
     "wporg-mcp-server": {
       "command": "npx",
-      "args": ["-y", "@automattic/mcp-wordpress-remote@latest"],
+      "args": ["-y", "@automattic/mcp-wordpress-remote@^0.2"],
       "env": {
         "WP_API_URL": "https://wordpress.org/wp-json/mcp/wporg",
         "WP_API_USERNAME": "your-username",
