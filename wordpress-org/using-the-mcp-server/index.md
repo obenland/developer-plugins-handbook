@@ -16,9 +16,23 @@ This is a tool to assist your workflow, not a replacement for the review process
 
 ## Setting Up Your Connection
 
-Connecting your MCP client to WordPress.org takes a few minutes. You'll authorize the connection through your WordPress.org account, then add the generated configuration to your client.
+### Quick setup
 
-### Step 1: Authorize the connection
+Run this command in your terminal:
+
+```
+npx -y @wporg/mcp
+```
+
+This opens your browser to authorize the connection and create an application password, then automatically detects and configures your installed MCP clients (currently Claude Desktop, Claude Code, Cursor, and VS Code).
+
+If your client isn't supported yet, [let us know](https://meta.trac.wordpress.org/newticket) and use the manual setup below.
+
+### Manual setup
+
+If you prefer to configure the connection yourself, or if your client isn't yet supported by the quick setup, follow these steps.
+
+#### Step 1: Authorize the connection
 
 Visit the authorization page to get started:
 
@@ -28,7 +42,7 @@ If you're not already logged in, you'll be prompted to log in to your WordPress.
 
 [tip]Only one MCP application password exists per account at a time. If you authorize again later, your previous password will be revoked and a new one will be created.[/tip]
 
-### Step 2: Copy your configuration
+#### Step 2: Copy your configuration
 
 After approving, you'll see a JSON configuration block that looks like this:
 
@@ -50,7 +64,7 @@ After approving, you'll see a JSON configuration block that looks like this:
 
 Click **Copy** to copy this configuration to your clipboard. Your application password is shown only once. If you lose it, you'll need to authorize again to generate a new one.
 
-### Step 3: Add to your MCP client
+#### Step 3: Add to your MCP client
 
 Where you paste the configuration depends on which client you use:
 
